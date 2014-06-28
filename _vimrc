@@ -2,8 +2,8 @@
 
 " neobundle.vim によるプラグイン管理
 if has('vim_starting')
-    set nocompatible " Be iMproved
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
@@ -42,8 +42,8 @@ NeoBundleCheck
 
 " タブ・インデント
 set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
@@ -83,6 +83,6 @@ set clipboard=unnamed
 command! CD call s:CDToFileDir()
 
 function! s:CDToFileDir()
-    lcd %:p:h
-    pwd
+  lcd %:p:h
+  pwd
 endfunction
