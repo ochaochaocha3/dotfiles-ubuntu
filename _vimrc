@@ -13,8 +13,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
-
 NeoBundle 'sudo.vim'
+NeoBundle 'vim-jp/vimdoc-ja'
+
+NeoBundle 'bling/vim-airline'
+set laststatus=2
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'othree/eregex.vim'
 nnoremap / :M/
@@ -24,9 +31,10 @@ nnoremap ,? ?
 
 NeoBundle 'thinca/vim-qfreplace'
 
-NeoBundle 'desert256.vim'
-colorscheme desert256
+NeoBundle 'tomasr/molokai'
+colorscheme molokai
 
+NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'JavaScript-syntax'
