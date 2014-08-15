@@ -117,3 +117,6 @@ fi
 
 # 英語の man のエイリアス
 alias eman='env LANG=C LC_ALL=C man'
+
+# rbenv の初期化
+eval "$(rbenv init -)"

@@ -15,6 +15,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'sudo.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
+NeoBundle 'lilydjwg/fcitx.vim'
 
 NeoBundle 'bling/vim-airline'
 set laststatus=2
