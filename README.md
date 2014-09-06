@@ -36,9 +36,3 @@ Ubuntu 上の Arch Linux 用 dotfiles。対象プログラムは
 
 4. Vim の設定。
     1. Vim を起動して `NeoBundleInstall` を実行させる。
-    2. vimproc の設定。以下を実行する。
-
-        ```bash
-        cd ~/.vim/bundle/vimproc
-        make -f make_unix.mak
-        ```

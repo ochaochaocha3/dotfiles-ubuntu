@@ -11,10 +11,22 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \     'windows' : 'make -f make_mingw32.mak',
+  \     'cygwin' : 'make -f make_cygwin.mak',
+  \     'mac' : 'make -f make_mac.mak',
+  \     'unix' : 'make -f make_unix.mak',
+  \    },
+  \ }
+
 NeoBundle 'sudo.vim'
+
+" 日本語ドキュメント
+" インストールしても表示できない場合は以下を実行する
+" :helptags ~/.vim/bundle/vimdoc-ja/doc
 NeoBundle 'vim-jp/vimdoc-ja'
+
 NeoBundle 'lilydjwg/fcitx.vim'
 
 NeoBundle 'bling/vim-airline'
