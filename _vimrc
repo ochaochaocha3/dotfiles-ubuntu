@@ -61,6 +61,9 @@ NeoBundleCheck
 
 " ここまで：neobundle.vim によるプラグイン管理
 
+" マウスを有効にする
+set mouse=a
+
 " タブ・インデント
 set tabstop=4
 set softtabstop=2
