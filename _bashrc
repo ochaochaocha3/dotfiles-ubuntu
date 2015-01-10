@@ -125,3 +125,9 @@ alias be='bundle exec'
 
 # rbenv の初期化
 eval "$(rbenv init -)"
+
+# Android Studio
+ANDROID_STUDIO_PATH=$HOME/android-studio/bin
+if [ -d ANDROID_STUDIO_PATH ]; then
+  export PATH="$ANDROID_STUDIO_PATH:$PATH"
+fi
