@@ -1,0 +1,31 @@
+# Developing
+bundler
+pry
+yard
+rspec
+rubocop
+
+# Web developing
+passenger
+nokogiri
+haml
+sass
+erubis
+bootstrap-sass
+font-awesome-sass
+compass
+mechanize
+middleman
+net-irc
+mediawiki-gateway
+rubypress
+twitter
+cinch
+activesupport
+
+# Game developing
+gosu
+cingu
+
+# Etc
+gviz
