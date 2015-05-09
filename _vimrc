@@ -6,7 +6,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -58,7 +58,6 @@ nnoremap ,? ?
 NeoBundle 'thinca/vim-qfreplace'
 
 NeoBundle 'tomasr/molokai'
-colorscheme molokai
 
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'ngmy/vim-rubocop'
@@ -106,6 +105,8 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+call neobundle#end()
+
 filetype plugin indent on " Required!
 
 " Installation check.
@@ -135,6 +136,7 @@ set listchars=tab:>-,trail:-,eol:$,extends:>,precedes:<,nbsp:%
 set hlsearch "検索結果のハイライト。消すときは :nohl で。
 " □や○があってもカーソル位置がずれないようにする
 set ambiwidth=double
+colorscheme molokai
 syntax on
 
 " 文字コード
