@@ -20,3 +20,6 @@ nnoremap <S-d> <Nop>
 
 " q への誤爆でマクロ記録開始しないように q を無効化
 nnoremap q <Nop>
+
+" 入力補完で重くならないように履歴を表示しないようにする
+set complete=sb
