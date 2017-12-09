@@ -124,6 +124,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 " 表示
 set wrap
