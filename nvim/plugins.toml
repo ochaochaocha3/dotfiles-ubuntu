@@ -21,15 +21,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'othree/eregex.vim'
-hook_add = '''
-  nnoremap / :M/
-  nnoremap ? :M?
-  nnoremap ,/ /
-  nnoremap ,? ?
-'''
-
-[[plugins]]
 repo = 'thinca/vim-qfreplace'
 
 [[plugins]]
