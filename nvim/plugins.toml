@@ -100,3 +100,19 @@ hook_add = '''
   let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-5.0.so.1'
   let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 '''
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+hook_add = '''
+  let g:clang_format#command = 'clang-format-5.0'
+  let g:clang_format#code_style = 'llvm'
+  let g:clang_format#style_options = {
+    \ 'AllowShortFunctionsOnASingleLine': 'None',
+    \ 'PointerAlignment': 'Left'}
+  autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+  autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+  nmap <Leader>C :ClangFormatAutoToggle<CR>
+'''
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
