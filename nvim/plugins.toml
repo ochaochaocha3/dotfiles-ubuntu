@@ -88,7 +88,7 @@ on_ft = 'plantuml'
 repo = 'zchee/deoplete-clang'
 on_ft = ['c', 'cpp']
 hook_add = '''
-  let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-5.0.so.1'
+  let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1'
   let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 '''
 
