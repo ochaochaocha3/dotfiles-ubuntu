@@ -138,3 +138,15 @@ ANDROID_STUDIO_PATH=$HOME/android-studio/bin
 if [ -d ANDROID_STUDIO_PATH ]; then
   export PATH="$ANDROID_STUDIO_PATH:$PATH"
 fi
+
+# direnv
+if which direnv > /dev/null; then
+  eval "$(direnv hook bash)"
+fi
+
+# Golang関連
+gopath=$HOME/go
+if [ -d $gopath ]; then
+  export GOPATH=$gopath
+  export PATH="$gopath/bin:$PATH"
+fi
