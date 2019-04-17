@@ -134,8 +134,8 @@ export PATH="~/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Android Studio
-ANDROID_STUDIO_PATH=$HOME/android-studio/bin
-if [ -d ANDROID_STUDIO_PATH ]; then
+ANDROID_STUDIO_PATH="$HOME/android-studio/bin"
+if [ -d $ANDROID_STUDIO_PATH ]; then
   export PATH="$ANDROID_STUDIO_PATH:$PATH"
 fi
 
@@ -145,8 +145,17 @@ if which direnv > /dev/null; then
 fi
 
 # Golang関連
-gopath=$HOME/go
-if [ -d $gopath ]; then
-  export GOPATH=$gopath
-  export PATH="$gopath/bin:$PATH"
+MY_GOPATH=$HOME/go
+if [ -d $MY_GOPATH ]; then
+  export GOPATH=$MY_GOPATH
+  export PATH="$MY_GOPATH/bin:$PATH"
+fi
+
+# TeX関連
+TEXLIVE_PATH='/usr/local/texlive/2018'
+if [ -d $TEXLIVE_PATH ]; then
+  texmf_dist_doc="${TEXLIVE_PATH}/texmf-dist/doc"
+  export MANPATH="${texmf_dist_doc}/man:${MANPATH}"
+  export INFOPATH="${texmf_dist_doc}/info:${INFOPATH}"
+  export PATH="${TEXLIVE_PATH}/bin/x86_64-linux:${PATH}"
 fi
