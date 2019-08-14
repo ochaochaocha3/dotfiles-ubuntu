@@ -9,7 +9,21 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'vim-scripts/sudo.vim'
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+  set hidden
+
+  let g:LanguageClient_serverCommands = {
+      \ 'go': ['~/go/bin/gopls', 'serve'],
+      \ }
+
+  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/suda.vim'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
@@ -22,6 +36,20 @@ hook_add = '''
 
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+  let g:quickrun_config = {
+  \    '_': {
+  \      'runner': 'vimproc',
+  \    },
+  \    'tex': {
+  \      'command': 'latexmk',
+  \      'exec': '%c -pdfdvi %s',
+  \    },
+  \  }
+'''
 
 [[plugins]]
 repo = 'tomasr/molokai'
@@ -88,14 +116,14 @@ on_ft = 'plantuml'
 repo = 'zchee/deoplete-clang'
 on_ft = ['c', 'cpp']
 hook_add = '''
-  let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1'
+  let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-7.so'
   let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 '''
 
 [[plugins]]
 repo = 'rhysd/vim-clang-format'
 hook_add = '''
-  let g:clang_format#command = 'clang-format-6.0'
+  let g:clang_format#command = 'clang-format-7.0'
   let g:clang_format#code_style = 'llvm'
   let g:clang_format#style_options = {
     \ 'AllowShortFunctionsOnASingleLine': 'None',
@@ -103,6 +131,14 @@ hook_add = '''
   autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
   autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
   nmap <Leader>C :ClangFormatAutoToggle<CR>
+'''
+
+[[plugins]]
+repo = 'fatih/vim-go'
+rev = 'master'
+on_ft = 'go'
+hook_add = '''
+  let g:go_def_mode='gopls'
 '''
 
 [[plugins]]

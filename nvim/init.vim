@@ -49,6 +49,13 @@ set cinoptions=:0,g0,(1s,m1,j1,J1
 set backspace=indent,eol,start
 set inccommand=split
 
+" 句読点を「，．」に置換する
+nnoremap <Leader>p :silent! %s/、/，/g<CR>:silent! %s/。/．/g<CR>
+
+" TeXのインデント設定
+let g:tex_indent_brace=0
+let g:tex_indent_items=0
+
 " 表示
 colorscheme molokai
 
