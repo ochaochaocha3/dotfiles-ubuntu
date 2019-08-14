@@ -136,7 +136,20 @@ export PATH="~/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Android Studio
-ANDROID_STUDIO_PATH=$HOME/android-studio/bin
-if [ -d ANDROID_STUDIO_PATH ]; then
+ANDROID_STUDIO_PATH="$HOME/android-studio/bin"
+if [ -d $ANDROID_STUDIO_PATH ]; then
   export PATH="$ANDROID_STUDIO_PATH:$PATH"
 fi
+
+# TeX Live
+TEX_PATH="/usr/local/texlive/2018/bin/x86_64-linux"
+if [ -d $TEX_PATH ]
+then
+  export PATH="$TEX_PATH:$PATH"
+fi
+
+# ローカルXサーバにウィンドウを表示できるようにする
+export DISPLAY='localhost:0.0'
+
+# direnv
+eval "$(direnv hook bash)"
