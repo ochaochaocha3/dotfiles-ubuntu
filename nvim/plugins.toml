@@ -107,3 +107,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
+
+[[plugins]]
+repo = 'jasontbradshaw/pigeon.vim'
+on_ft = 'pigeon'
