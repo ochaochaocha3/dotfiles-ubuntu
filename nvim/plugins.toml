@@ -131,9 +131,6 @@ hook_add = '''
 repo = 'fatih/vim-go'
 rev = 'master'
 on_ft = 'go'
-hook_add = '''
-  let g:go_def_mode='gopls'
-'''
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
