@@ -38,6 +38,10 @@ endif
 " マウスを有効にする
 set mouse=a
 
+" ローカル .nvimrc を読み込む
+set exrc
+set secure
+
 " 編集
 set tabstop=4
 set softtabstop=2
