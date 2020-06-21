@@ -113,17 +113,9 @@ repo = 'aklt/plantuml-syntax'
 on_ft = 'plantuml'
 
 [[plugins]]
-repo = 'zchee/deoplete-clang'
-on_ft = ['c', 'cpp']
-hook_add = '''
-  let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-7.so'
-  let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-'''
-
-[[plugins]]
 repo = 'rhysd/vim-clang-format'
 hook_add = '''
-  let g:clang_format#command = 'clang-format-7.0'
+  let g:clang_format#command = 'clang-format-7'
   let g:clang_format#code_style = 'llvm'
   let g:clang_format#style_options = {
     \ 'AllowShortFunctionsOnASingleLine': 'None',
