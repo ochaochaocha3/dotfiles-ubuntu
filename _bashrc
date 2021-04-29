@@ -162,20 +162,33 @@ if [ -d $TEXLIVE_PATH ]; then
   export PATH="${TEXLIVE_PATH}/bin/x86_64-linux:${PATH}"
 fi
 
-# ローカルXサーバにウィンドウを表示できるようにする
-export DISPLAY='localhost:0.0'
+# For Rust development
+CARGO_PATH="$HOME/.cargo/bin"
+if [ -d $CARGO_PATH ]
+then
+  export PATH="$CARGO_PATH:$PATH"
+fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("$HOME/anaconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#__conda_setup="$("$HOME/anaconda3/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "$HOME/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="$HOME/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
+
+# For FPGA development
+QUARTUS_ROOT="$HOME/intelFPGA_lite/18.1/quartus"
+if [ -d $QUARTUS_ROOT ]
+then
+  export PATH="$QUARTUS_ROOT/bin:$PATH"
+  export QSYS_ROOTDIR="$QUARTUS_ROOT/sopc_builder/bin"
+  export PATH="$QSYS_ROOTDIR:$PATH"
+fi
