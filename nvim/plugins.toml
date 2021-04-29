@@ -119,6 +119,13 @@ repo = 'jasontbradshaw/pigeon.vim'
 on_ft = 'pigeon'
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+hook_add = '''
+let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 build = './install.sh'
 hook_add = '''
